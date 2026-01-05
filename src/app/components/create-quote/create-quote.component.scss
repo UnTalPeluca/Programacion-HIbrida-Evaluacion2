@@ -1,0 +1,35 @@
+ion-card {
+  box-shadow: none;
+  color: white;
+
+  .title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .input-container {
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    ion-item {
+      padding: 2px 12px;
+      --background: transparent;
+      --padding-start: 0;
+
+      ion-label {
+        font-weight: bold;
+        min-width: 60px;
+      }
+    }
+  }
+
+  ion-button {
+    margin-top: 24px;
+    --color: #2563eb;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 120px
+  }
+  ion-note {
+    margin-left: 12px;
+  }
+}

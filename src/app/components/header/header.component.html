@@ -1,0 +1,8 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button style="font-size: 24px; width: 32px;" *ngIf="!isHome" fill="clear" slot="start"
+      routerLink="/home">←</ion-button>
+    <ion-title slot="start">{{ title }}</ion-title>
+    <ion-button *ngIf="isHome" fill="clear" slot="end" routerLink="/configuraciones">⚙️</ion-button>
+  </ion-toolbar>
+</ion-header>

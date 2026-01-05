@@ -1,0 +1,9 @@
+<ion-card>
+  <ion-button *ngIf="canDelete" (click)="onDelete.emit()">
+    🗑️
+  </ion-button>
+  <ion-card-content>
+    <p class="quote-text">{{ text }}</p>
+    <p class="quote-author ion-text-end">— {{ author }}</p>
+  </ion-card-content>
+</ion-card>
