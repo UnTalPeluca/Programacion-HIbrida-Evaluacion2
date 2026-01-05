@@ -2,7 +2,11 @@
   <div id="container">
     <app-create-quote (onCreate)="handleCreate($event)"></app-create-quote>
 
-    <app-quote-item *ngFor="let q of quotes" [text]="q.text" [author]="q.author">
+    <app-quote-item 
+      *ngFor="let q of quotes"
+      [text]="q.text"
+      [author]="q.author"
+      (onDelete)="deleteQuote(q.id!)">
     </app-quote-item>
   </div>
 </ion-content>

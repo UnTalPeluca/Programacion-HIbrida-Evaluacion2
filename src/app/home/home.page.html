@@ -1,7 +1,14 @@
 <ion-content [fullscreen]="true">
   <div id="container">
-    <app-quote text="El éxito consiste en obtener lo que se desea. La felicidad en disfrutar lo que se obtiene."
-      author="Ralph Waldo Emerson" [canDelete]="showDelete"> </app-quote>
+    <app-quote 
+      *ngIf="randomQuote"
+      [text]="randomQuote.text"
+      [author]="randomQuote.author" 
+      [canDelete]="showDelete"
+      (onDelete)="handleDelete()"> 
+    </app-quote>
+
+    <p *ngIf="!randomQuote" class="ion-text-center">No hay citas en la base de datos.</p>
   </div>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

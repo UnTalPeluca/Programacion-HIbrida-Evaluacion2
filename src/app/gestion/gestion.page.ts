@@ -23,24 +23,22 @@ export class GestionPage implements OnInit {
   quotes: Quote[] = [];
 
   constructor(private quoteService: QuoteService) {}
-
   ngOnInit() {}
-
-  // Se ejecuta cada vez que entras a la pestaña [cite: 420]
   async ionViewWillEnter() {
     await this.loadQuotes();
   }
-
   async loadQuotes() {
     this.quotes = await this.quoteService.findAllQuotes();
   }
-
-  // Para que el componente de creación guarde en la BD
   async handleCreate(newQuote: { quote: string; author: string }) {
     await this.quoteService.addQuote({
       text: newQuote.quote,
       author: newQuote.author,
     });
-    await this.loadQuotes(); // Refrescar lista
+    await this.loadQuotes();
+  }
+  async deleteQuote(id: number) {
+    await this.quoteService.deleteQuote(id);
+    this.quotes = await this.quoteService.findAllQuotes();
   }
 }
